@@ -87,12 +87,12 @@
 
             <div class="space-y-1">
 
-                <a href="{{ route('pasien.dashboard') }}"
+                <a href=""//pasien.dashboard
                     class="{{ $baseLink }} {{ request()->routeIs('pasien.dashboard') ? $active : $inactive }}">
                     <i class="fas fa-house-medical w-4 text-center"></i>
                     Dashboard Pasien
                 </a>
-                <a href="{{ route('pasien.daftar') }}"
+                <a href=""//pasien.daftar
                     class="{{ $baseLink }} {{ request()->routeIs('pasien.daftar') ? $active : $inactive }}">
                     <i class="fas fa-house-medical w-4 text-center"></i>
                     Pendaftaran Periksa
@@ -111,22 +111,22 @@
 
             <div class="space-y-1">
 
-                <a href="{{ route('dokter.dashboard') }}"
+                <a href=""//dokter.dashboard
                     class="{{ $baseLink }} {{ request()->routeIs('dokter.dashboard') ? $active : $inactive }}">
                     <i class="fas fa-stethoscope w-4 text-center"></i>
                     Dashboard Dokter
                 </a>
-                <a href="{{ route('jadwal-periksa.index') }}"
+                <a href=""//jadwal-periksa.index
                     class="{{ $baseLink }} {{ request()->routeIs('jadwal-periksa.*') ? $active : $inactive }}">
                     <i class="fas fa-calendar-days w-4 text-center"></i>
                     Jadwal Periksa
                 </a>
-                <a href="{{ route('periksa-pasien.index') }}"
+                <a href=""//periksa-pasien.index
                     class="{{ $baseLink }} {{ request()->routeIs('periksa-pasien.*') ? $active : $inactive }}">
                     <i class="fas fa-notes-medical w-4 text-center"></i>
                     Periksa Pasien
                 </a>
-                <a href="{{ route('riwayat-pasien.index') }}"
+                <a href="" //riwayat-pasien.index
                     class="{{ $baseLink }} {{ request()->routeIs('riwayat-pasien.*') ? $active : $inactive }}">
                     <i class="fas fa-clock-rotate-left w-4 text-center"></i>
                     Riwayat Pasien

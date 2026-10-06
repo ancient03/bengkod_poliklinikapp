@@ -2,14 +2,14 @@
 
     {{-- Mobile Hamburger --}}
     <button onclick="toggleSidebar()" class="btn btn-square btn-ghost lg:hidden">
-        <i data-lucide="menu" class="w-5 h-5"></i>
+        <i class="fas fa-bars text-base"></i>
     </button>
 
     {{-- Breadcrumb --}}
     <div class="flex-1">
         <div class="flex items-center gap-2 text-sm">
             <span class="text-base-content/50">Poliklinik</span>
-            <i data-lucide="chevron-right" class="w-4 h-4 text-base-content/30"></i>
+            <i class="fas fa-chevron-right text-xs text-base-content/30"></i>
             <span class="font-semibold text-base-content">
                 {{ $title ?? 'Dashboard' }}
             </span>
@@ -22,25 +22,34 @@
     </button>
 
     {{-- User Info --}}
-    <div class="flex items-center gap-3">
+    @if (auth()->check())
+        <div class="dropdown dropdown-end">
+            <div tabindex="0" role="button"
+                class="flex items-center gap-3 cursor-pointer p-1.5 rounded-xl hover:bg-base-200/60 transition-colors">
+                <div class="text-right hidden sm:block">
+                    <div class="text-sm font-semibold leading-tight text-base-content">
+                        {{ auth()->user()->nama ?? (auth()->user()->name ?? 'Pengguna') }}
+                    </div>
+                    <div class="text-xs text-base-content/60 leading-tight capitalize mt-0.5">
+                        {{ auth()->user()->role ?? '' }}
+                        @if (auth()->user()->role === 'pasien' && auth()->user()->no_rm)
+                            <span class="text-base-content/40">• {{ auth()->user()->no_rm }}</span>
+                        @endif
+                    </div>
+                </div>
 
-        <div class="text-right hidden sm:block">
-            <div class="text-sm font-semibold leading-tight">
-                {{ auth()->user()->name ?? 'Pengguna' }}
+                <div class="avatar placeholder">
+                    <div
+                        class="w-10 h-10 rounded-full bg-primary text-primary-content flex items-center justify-center font-bold text-sm shadow-sm ring-2 ring-primary/20">
+                        <span>
+                            {{ strtoupper(substr(auth()->user()->nama ?? (auth()->user()->name ?? 'U'), 0, 1)) }}
+                        </span>
+                    </div>
+                </div>
             </div>
-            <div class="text-xs text-base-content/50 leading-tight">
-                {{ auth()->user()->role ?? 'Admin Sistem' }}
-            </div>
-        </div>
 
-        <div class="avatar">
-            <div class="w-10 h-10 rounded-full bg-primary text-primary-content flex items-center justify-center">
-                <span class="text-sm font-semibold leading-none">
-                    {{ strtoupper(substr(auth()->user()->name ?? 'U', 0, 1)) }}
-                </span>
-            </div>
         </div>
-    </div>
+    @endif
 
 </header>
 

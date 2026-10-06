@@ -53,6 +53,11 @@ class User extends Authenticatable
         ];
     }
 
+    public function getNameAttribute(): ?string
+    {
+        return $this->nama;
+    }
+
     public function poli()
     {
         return $this->belongsTo(Poli::class, 'id_poli');
