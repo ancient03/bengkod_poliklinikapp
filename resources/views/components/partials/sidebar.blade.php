@@ -111,14 +111,14 @@
 
             <div class="space-y-1">
 
-                <a href=""//dokter.dashboard
+                <a href="{{ route('dokter.dashboard') }}"
                     class="{{ $baseLink }} {{ request()->routeIs('dokter.dashboard') ? $active : $inactive }}">
                     <i class="fas fa-stethoscope w-4 text-center"></i>
                     Dashboard Dokter
                 </a>
-                <a href=""//jadwal-periksa.index
+                <a href="{{ route('jadwal-periksa.index') }}"
                     class="{{ $baseLink }} {{ request()->routeIs('jadwal-periksa.*') ? $active : $inactive }}">
-                    <i class="fas fa-calendar-days w-4 text-center"></i>
+                    <i class="fas fa-stethoscope w-4 text-center"></i>
                     Jadwal Periksa
                 </a>
                 <a href=""//periksa-pasien.index
