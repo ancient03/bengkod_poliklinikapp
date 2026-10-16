@@ -70,7 +70,7 @@
                     <i class="fas fa-bed-pulse w-4 text-center"></i>
                     Manajemen Pasien
                 </a>
-                <a href="" //obat.index
+                <a href="{{ route('obat.index') }}"
                     class="{{ $baseLink }} {{ request()->routeIs('obat.*') ? $active : $inactive }}">
                     <i class="fas fa-pills w-4 text-center"></i>
                     Manajemen Obat
