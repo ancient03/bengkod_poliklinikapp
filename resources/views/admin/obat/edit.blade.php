@@ -18,8 +18,9 @@
     <div class="card bg-base-100 shadow-md rounded-2xl border border-slate-200">
         <div class="card-body p-8">
 
-            <form action="{{ route('obat.store') }}" method="POST">
+            <form action="{{ route('obat.update', $obat->id) }}" method="POST">
                 @csrf
+                @method('PUT')
 
                 {{-- Grid --}}
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
@@ -29,7 +30,7 @@
                         <label class="block text-sm font-semibold text-slate-700 mb-1">
                             Nama Obat <span class="text-red-500">*</span>
                         </label>
-                        <input type="text" name="nama_obat" value="{{ old('nama_obat') }}"
+                        <input type="text" name="nama_obat" value="{{ old('nama_obat', $obat->nama_obat) }}"
                             placeholder="Masukkan nama obat..."
                             class="w-full px-4 py-2 border-2 rounded-lg p-2
                                       focus:border-primary focus:outline-none
@@ -45,7 +46,7 @@
                         <label class="block text-sm font-semibold text-slate-700 mb-1">
                             Kemasan
                         </label>
-                        <input type="text" name="kemasan" value="{{ old('kemasan') }}"
+                        <input type="text" name="kemasan" value="{{ old('kemasan', $obat->kemasan) }}"
                             placeholder="Contoh: Strip, Botol, Tube..."
                             class="w-full px-4 py-2 border-2 rounded-lg p-2
                                       focus:border-primary focus:outline-none
@@ -69,7 +70,7 @@
                         <span class="text-slate-500 text-sm font-semibold mr-2">
                             Rp
                         </span>
-                        <input type="number" name="harga" value="{{ old('harga') }}" placeholder="0" min="0"
+                        <input type="number" name="harga" value="{{ old('harga', $obat->harga) }}" placeholder="0" min="0"
                             step="1"
                             class="w-full focus:outline-none
                                       @error('harga') border-red-500 @enderror"
