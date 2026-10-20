@@ -1,4 +1,4 @@
-<x-layouts.app title="Tambah Obat">
+<x-layouts.app title="Edit Obat">
 
     {{-- Header --}}
     <div class="flex items-center gap-3 mb-6">
@@ -10,7 +10,7 @@
         </a>
 
         <h2 class="text-2xl font-bold text-slate-800">
-            Tambah Obat
+            Edit Obat
         </h2>
     </div>
 
